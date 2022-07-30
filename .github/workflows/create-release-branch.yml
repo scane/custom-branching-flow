@@ -22,7 +22,7 @@ jobs:
         run: git push origin release/${{github.event.inputs.name}}
 
       - name: Setup branch protection rules
-        uses: ./
+        uses: infamous-riddles/branch-guardian@v1
         with:
           PERSONAL-ACCESS-TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
           BASE-BRANCH-PATTERN: 'release/${{github.event.inputs.name}}'
