@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Setup branch protection rules
-        uses: infamous-riddles/branch-guardian
+        uses: infamous-riddles/branch-guardian@v1
         with:
           PERSONAL-ACCESS-TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
           BASE-BRANCH-PATTERN: "main"
