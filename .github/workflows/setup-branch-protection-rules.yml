@@ -1,6 +1,6 @@
 name: setup-branch-protection-rules
 
-on: workflow_dispatch
+on: create
 
 jobs:
   setup-branch-protection-rules:
@@ -12,6 +12,6 @@ jobs:
         uses: infamous-riddles/branch-guardian@v1
         with:
           PERSONAL-ACCESS-TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
-          BASE-BRANCH-PATTERN: "^main$"
+          BASE-BRANCH-PATTERN: "^$release\/*$"
           REQUIRED-NUMBER-OF-REVIEWERS: 1
           DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: true
