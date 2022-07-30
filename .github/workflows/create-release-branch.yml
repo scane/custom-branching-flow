@@ -25,6 +25,6 @@ jobs:
         uses: infamous-riddles/branch-guardian@v1
         with:
           PERSONAL-ACCESS-TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
-          BASE-BRANCH-PATTERN: 'release/${{github.event.inputs.name}}'
+          BASE-BRANCH-PATTERN: "release/${{github.event.inputs.name}}"
           REQUIRED-NUMBER-OF-REVIEWERS: 1
-          DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: 'true'
+          DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: true
