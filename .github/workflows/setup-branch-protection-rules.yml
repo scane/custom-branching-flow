@@ -1,0 +1,15 @@
+name: setup-branch-protection-rules
+
+jobs:
+  setup-branch-protection-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup branch protection rules
+        uses: infamous-riddles/branch-guardian@v1
+        with:
+          PERSONAL-ACCESS-TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+          BASE-BRANCH-PATTERN: "main"
+          REQUIRED-NUMBER-OF-REVIEWERS: 1
+          DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: true
