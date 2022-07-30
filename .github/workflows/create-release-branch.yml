@@ -1,0 +1,30 @@
+name: create-release-branch
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Name of the branch. 'release/' prefix will be added."
+        required: true
+
+jobs:
+  create-feature-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Create release branch
+        run: git checkout -b release/${{github.event.inputs.name}} main
+
+      - name: Push the branch to origin
+        run: git push origin release/${{github.event.inputs.name}}
+
+      - name: Setup branch protection rules
+        uses: ./
+        with:
+          PERSONAL-ACCESS-TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+          BASE-BRANCH-PATTERN: 'release/${{github.event.inputs.name}}'
+          REQUIRED-NUMBER-OF-REVIEWERS: 1
+          DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: 'true'
