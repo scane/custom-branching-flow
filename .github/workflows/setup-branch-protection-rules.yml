@@ -1,6 +1,8 @@
 name: setup-branch-protection-rules
 
-on: create
+on:
+  create:
+    ref_type: branch
 
 jobs:
   setup-branch-protection-rules:
