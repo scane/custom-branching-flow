@@ -1,5 +1,7 @@
 name: setup-branch-protection-rules
 
+on: workflow_dispatch
+
 jobs:
   setup-branch-protection-rules:
     runs-on: ubuntu-latest
