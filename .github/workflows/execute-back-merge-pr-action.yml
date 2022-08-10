@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Execute action
-        uses: scane/create-back-merge-pr@v1.0.0
+        uses: scane/create-back-merge-pr@v1.0.1
