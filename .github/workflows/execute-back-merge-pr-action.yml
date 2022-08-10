@@ -1,0 +1,9 @@
+name: create-release-branch
+on: workflow_dispatch
+
+jobs:
+  execute-back-merge-pr-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute action
+        uses: scane/create-back-merge-pr

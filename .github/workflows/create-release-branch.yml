@@ -20,13 +20,3 @@ jobs:
 
       - name: Push the branch to origin
         run: git push origin release/${{github.event.inputs.name}}
-
-      # - uses: actions/checkout@v1
-
-      # - name: Setup branch protection rules
-      #   uses: infamous-riddles/branch-guardian@v1
-      #   with:
-      #     PERSONAL-ACCESS-TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
-      #     BASE-BRANCH-PATTERN: "release/${{github.event.inputs.name}}"
-      #     REQUIRED-NUMBER-OF-REVIEWERS: 1
-      #     DISMISS-STALE-PR-APPROVALS-ON-NEW-COMMITS: true
