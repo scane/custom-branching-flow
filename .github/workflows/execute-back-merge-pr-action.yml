@@ -7,3 +7,5 @@ jobs:
     steps:
       - name: Execute action
         uses: scane/create-back-merge-pr@v1.0.2
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
