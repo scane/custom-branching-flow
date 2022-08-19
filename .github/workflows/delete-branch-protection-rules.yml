@@ -1,0 +1,14 @@
+
+name: delete-branch-protection-rules
+on: delete
+
+jobs:
+  delete-branch-protection-rules:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: infamous-riddles/branch-guardian@v1
+      with:
+        PERSONAL-ACCESS-TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+        BASE-BRANCH-PATTERN: '^release\/[a-zA-Z0-9]+$'
+
